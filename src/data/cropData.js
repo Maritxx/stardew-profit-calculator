@@ -18,6 +18,8 @@ const cropData = [
         },
         produce: {
             baseSellPrice: 150,
+            minYield: 1,
+            extraYieldPerc: 0
         }
     },
     {
@@ -39,7 +41,9 @@ const cropData = [
             daysTillRegrow: 7
         },
         produce: {
-            baseSellPrice: 550
+            baseSellPrice: 550,
+            minYield: 1,
+            extraYieldPerc: 0
         }
     }, 
     {
@@ -60,7 +64,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 160
+            baseSellPrice: 160,
+            minYield: 1,
+            extraYieldPerc: 0
         }
         //only year 2+ 
     },
@@ -82,7 +88,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 100
+            baseSellPrice: 100,
+            minYield: 1,
+            extraYieldPerc: 0
         }
     },
     {
@@ -103,7 +111,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 50
+            baseSellPrice: 50,
+            minYield: 1,
+            extraYieldPerc: 0      
         }
     },
     {
@@ -124,9 +134,9 @@ const cropData = [
             daysTillRegrow: 4
         },
         produce: {
-            baseSellPrice: 50
-            //3 blueberries per harvest
-            //2% chance of more blueberries
+            baseSellPrice: 50,
+            minYield: 3,
+            extraYieldPerc: 0.02            
         }
     },
     {
@@ -147,7 +157,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 80
+            baseSellPrice: 80,
+            minYield: 1,
+            extraYieldPerc: 0     
         }
     },
     {
@@ -169,7 +181,9 @@ const cropData = [
             daysTillRegrow: 3
         },
         produce: {
-            baseSellPrice: 75
+            baseSellPrice: 75,
+            minYield: 1,
+            extraYieldPerc: 0     
         }
     },
     {
@@ -190,7 +204,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 175
+            baseSellPrice: 175,
+            minYield: 1,
+            extraYieldPerc: 0
         }
     },
     {
@@ -212,9 +228,9 @@ const cropData = [
             daysTillRegrow: 2
         },
         produce: {
-            baseSellPrice: 15
-            //4 beans per harvest
-            //small random chance for more beans
+            baseSellPrice: 15,
+            minYield: 4,
+            extraYieldPerc: 0.02         
         }
     },
     {
@@ -236,7 +252,9 @@ const cropData = [
             daysTillRegrow: 4
         },
         produce: {
-            baseSellPrice: 50
+            baseSellPrice: 50,
+            minYield: 1,
+            extraYieldPerc: 0      
         }
     },
     {
@@ -257,9 +275,9 @@ const cropData = [
             daysTillRegrow: 5
         },
         produce: {
-            baseSellPrice: 75
-            //2 berries per harvest
-            //small random chance for more berries
+            baseSellPrice: 75,
+            minYield: 2,
+            extraYieldPerc: 0.1       
         }
     },
     {
@@ -280,8 +298,9 @@ const cropData = [
             daysTillRegrow: 5
         },
         produce: {
-            baseSellPrice: 60
-            //small random chance for more eggplants
+            baseSellPrice: 60,
+            minYield: 1,
+            extraYieldPerc: 0.002
         }
     },
     {
@@ -302,7 +321,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 290
+            baseSellPrice: 290,
+            minYield: 1,
+            extraYieldPerc: 0
         }
     },
     {
@@ -323,7 +344,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 50
+            baseSellPrice: 50,
+            minYield: 1,
+            extraYieldPerc: 0      
         }
         //only year 2+    
     },
@@ -345,7 +368,9 @@ const cropData = [
             daysTillRegrow: 3
         },
         produce: {
-            baseSellPrice: 80
+            baseSellPrice: 80,
+            minYield: 1,
+            extraYieldPerc: 0     
         }
     },
     {
@@ -366,7 +391,9 @@ const cropData = [
             daysTillRegrow: 3
         },
         produce: {
-            baseSellPrice: 40
+            baseSellPrice: 40,
+            minYield: 1,
+            extraYieldPerc: 0      
         }
     },
     {
@@ -387,7 +414,9 @@ const cropData = [
             daysTillRegrow: 1
         },
         produce: {
-            baseSellPrice: 25
+            baseSellPrice: 25,
+            minYield: 1,
+            extraYieldPerc: 0      
         }
     },     
     {
@@ -408,8 +437,9 @@ const cropData = [
             daysTillRegrow: 3
         },
         produce: {
-            baseSellPrice: 40
-            //small random chance for more hot peppers
+            baseSellPrice: 40,
+            minYield: 1,
+            extraYieldPerc: 0.03
         }
     },  
     {
@@ -430,7 +460,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 110
+            baseSellPrice: 110,
+            minYield: 1,
+            extraYieldPerc: 0
         }
     },
     {
@@ -451,7 +483,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 250
+            baseSellPrice: 250,
+            minYield: 1,
+            extraYieldPerc: 0
         }
     },
     {
@@ -472,7 +506,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 35
+            baseSellPrice: 35,
+            minYield: 1,
+            extraYieldPerc: 0       
         }
     },
     {
@@ -494,7 +530,9 @@ const cropData = [
             daysTillRegrow: 7
         },
         produce: {
-            baseSellPrice: 300
+            baseSellPrice: 300,
+            minYield: 1,
+            extraYieldPerc: 0
         }
     },
     {
@@ -515,7 +553,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 140
+            baseSellPrice: 140,
+            minYield: 1,
+            extraYieldPerc: 0
         }
     },
     {
@@ -534,10 +574,11 @@ const cropData = [
         growth: {
             daysTillMature: 6,
             daysTillRegrow: 0
-            //25% chance to yield an extra potato.
         },
         produce: {
-            baseSellPrice: 80
+            baseSellPrice: 80,
+            minYield: 1,
+            extraYieldPerc: 0.2       
         }
     },
     {
@@ -558,7 +599,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 320
+            baseSellPrice: 320,
+            minYield: 1,
+            extraYieldPerc: 0
         }
     },
     {
@@ -579,7 +622,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 90
+            baseSellPrice: 90,
+            minYield: 1,
+            extraYieldPerc: 0        
         }
     },
     {
@@ -600,7 +645,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 260
+            baseSellPrice: 260,
+            minYield: 1,
+            extraYieldPerc: 0
         }
         //year 2+
     },
@@ -622,7 +669,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 220
+            baseSellPrice: 220,
+            minYield: 1,
+            extraYieldPerc: 0
         }
     },
     {
@@ -643,7 +692,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 750
+            baseSellPrice: 750,
+            minYield: 1,
+            extraYieldPerc: 0
         }
     },
     {
@@ -665,7 +716,9 @@ const cropData = [
             daysTillRegrow: 4
         },
         produce: {
-            baseSellPrice: 120
+            baseSellPrice: 120,
+            minYield: 1,
+            extraYieldPerc: 0.02
         }
     },
     {
@@ -686,7 +739,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 90
+            baseSellPrice: 90,
+            minYield: 1,
+            extraYieldPerc: 0      
         }
     },
     {
@@ -708,7 +763,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 80
+            baseSellPrice: 80,
+            minYield: 1,
+            extraYieldPerc: 0        
         }
     },
     {
@@ -729,7 +786,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 3000
+            baseSellPrice: 300,
+            minYield: 1,
+            extraYieldPerc: 0
         }
     },
     {
@@ -752,7 +811,9 @@ const cropData = [
             //3 days more if not watered.
         },
         produce: {
-            baseSellPrice: 35
+            baseSellPrice: 35,
+            minYield: 1,
+            extraYieldPerc: 0       
         }
     },
     {
@@ -775,7 +836,9 @@ const cropData = [
             daysTillRegrow: 1
         },
         produce: {
-            baseSellPrice: 50
+            baseSellPrice: 50,
+            minYield: 1,
+            extraYieldPerc: 0
         }
     },
     {
@@ -796,8 +859,9 @@ const cropData = [
             daysTillRegrow: 4
         },
         produce: {
-            baseSellPrice: 60
-            //small random chance for more tomatoes
+            baseSellPrice: 60,
+            minYield: 1,
+            extraYieldPerc: 0.05
         }
     },
     {
@@ -818,7 +882,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 30
+            baseSellPrice: 30,
+            minYield: 1,
+            extraYieldPerc: 0     
         }
     },
     {
@@ -841,7 +907,9 @@ const cropData = [
             //if not watered, 2 days more. 
         },
         produce: {
-            baseSellPrice: 30
+            baseSellPrice: 30,
+            minYield: 1,
+            extraYieldPerc: 0.1        
         }
     },
     {
@@ -862,7 +930,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 25
+            baseSellPrice: 25,
+            minYield: 1,
+            extraYieldPerc: 0          
             //also 40% chance to drop hay
         }
     },
@@ -884,7 +954,9 @@ const cropData = [
             daysTillRegrow: 0
         },
         produce: {
-            baseSellPrice: 35
+            baseSellPrice: 35,
+            minYield: 1,
+            extraYieldPerc: 0
         }
     },
 ]
