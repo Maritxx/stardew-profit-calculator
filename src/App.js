@@ -1,9 +1,11 @@
 import './App.css';
 
+import OptionsContainer from './components/Options/OptionsContainer';
+
 function App() {
   return (
     <div>
-        <h1>Hello World!</h1>
+        <OptionsContainer />
     </div>
   );
 }
