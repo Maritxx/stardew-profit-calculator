@@ -1,11 +1,11 @@
 import './App.css';
 
-import OptionsContainer from './components/Options/OptionsContainer';
+import ChartContainer from './components/Chart/ChartContainer';
 
 function App() {
   return (
     <div>
-        <OptionsContainer />
+        <ChartContainer />
     </div>
   );
 }

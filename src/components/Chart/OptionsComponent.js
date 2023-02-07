@@ -1,5 +1,3 @@
-//Has the actual presentation of the component. 
-
 function OptionsComponent(props) {
     return (
         <form>
@@ -7,31 +5,33 @@ function OptionsComponent(props) {
                 <label>Current Season: 
                     <select
                         name="currentSeason"
-                        //value= useState from the container. Starts on spring.
-                        //onChange= props. function from the container to set current state.
-                        >
-                            <option value="spring">Spring</option>
-                            <option value="summer">Summer</option>
-                            <option value="fall">Fall</option>
-                            <option value="winter">Winter</option>
-                            <option value="greenhouse">Greenhouse</option>
-                            <option value="gingerisland">Ginger Island</option>
-                        </select>
+                        value={props.data.currentSeason}
+                        onChange={props.handleChange}
+                    >
+                        <option value="spring">Spring</option>
+                        <option value="summer">Summer</option>
+                        <option value="fall">Fall</option>
+                        <option value="winter">Winter</option>
+                        <option value="greenhouse">Greenhouse</option>
+                        <option value="gingerisland">Ginger Island</option>
+                    </select>
                 </label>
                 <label>Current Day:
                     <input 
                         type="number"
                         name="currentDay"
-                        //value= useState from the container, initial value of 1.
-                        //onChange= props. function from the container to set the current state. NEEDS TO VALIDATE RANGE FIRST (not over 28 days).
+                        min="1"
+                        max="28"
+                        value={props.data.currentDay}
+                        onChange={props.handleChange}
                     >
                     </input>
                 </label>
                 <label>Type of Produce:
                     <select
                         name="produceType"
-                        //value= useState from the container. Starts on raw.
-                        //onChange= props. function from the container to set current state.
+                        value={props.data.produceType}
+                        onChange={props.handleChange}
                     >
                         <option value="raw">Raw</option>
                         <option value="jar">Jar</option>
@@ -43,8 +43,10 @@ function OptionsComponent(props) {
                     <input
                         type="number"
                         name="cropAmount"
-                        //value= useState from the container. Initial value of 1.
-                        //onChange= props. function from the container to set the current state. NEEDS TO VALIDATE RANGE (bigger than 0, no 'e').   
+                        min="1"
+                        max="1000000000"
+                        value={props.data.cropAmount}
+                        onChange={props.handleChange}
                     >
                     </input>
                 </label>
@@ -55,8 +57,10 @@ function OptionsComponent(props) {
                     <input
                         type="number"
                         name="seedBudget"
-                        //value= useState from the container. Initial value of 0.
-                        //onChange= props. function from the container to set the current state. NEEDS TO VALIDATE RANGE (bigger than 0, no 'e').   
+                        min="0"
+                        max="1000000000"
+                        value={props.data.seedBudget}
+                        onChange={props.handleChange}
                     >
                     </input>
                 </label>
@@ -66,8 +70,8 @@ function OptionsComponent(props) {
                         <input
                             type="checkbox"
                             name="seedsPierre"
-                            //checked= useState from the container. Initial value of true.
-                            //onChange props. function from the container to set the current state.
+                            checked={props.data.seedsPierre}
+                            onChange={props.handleChange}
                         >
                         </input> Pierre                 
                     </label>
@@ -75,8 +79,8 @@ function OptionsComponent(props) {
                         <input
                             type="checkbox"
                             name="seedsJoja"
-                            //checked= useState from the container. Initial value of true.
-                            //onChange props. function from the container to set the current state.
+                            checked={props.data.seedsJoja}
+                            onChange={props.handleChange}
                         >
                         </input> JojaMart                  
                     </label>
@@ -84,8 +88,8 @@ function OptionsComponent(props) {
                         <input
                             type="checkbox"
                             name="seedsOasis"
-                            //checked= useState from the container. Initial value of false.
-                            //onChange props. function from the container to set the current state.
+                            checked={props.data.seedsOasis}
+                            onChange={props.handleChange}
                         >
                         </input> Oasis                  
                     </label>
@@ -93,8 +97,8 @@ function OptionsComponent(props) {
                         <input
                             type="checkbox"
                             name="seedsMerchant"
-                            //checked= useState from the container. Initial value of false.
-                            //onChange props. function from the container to set the current state.
+                            checked={props.data.seedsMerchant}
+                            onChange={props.handleChange}
                         > 
                         </input> Traveling Merchant                   
                     </label>
@@ -102,8 +106,8 @@ function OptionsComponent(props) {
                         <input
                             type="checkbox"
                             name="seedsOther"
-                            //checked= useState from the container. Initial value of false.
-                            //onChange props. function from the container to set the current state.
+                            checked={props.data.seedsOther}
+                            onChange={props.handleChange}
                             //Will need some sort of tooltip to make clear its mobs, crafting and island merchant.
                         > 
                         </input> Other Sources                  
@@ -112,8 +116,8 @@ function OptionsComponent(props) {
                 <label>Fertilizer used:
                     <select
                         name="fertilizerType"
-                        //value= useState from the container. Initial value of none.
-                        //onChange= props. function from the container to set the current state.
+                        value={props.data.fertilizerType}
+                        onChange={props.handleChange}
                     >
                         <option value="none">None</option>
                         <option value="basicFertilizer">Basic Fertilizer</option>
