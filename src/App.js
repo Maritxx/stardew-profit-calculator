@@ -4,7 +4,7 @@ import ChartContainer from './components/Chart/ChartContainer';
 
 function App() {
   return (
-    <div>
+    <div className="page__container">
         <ChartContainer />
     </div>
   );

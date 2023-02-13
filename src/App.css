@@ -1,5 +1,7 @@
-.App {
-  text-align: center;
+.page__container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 /*Will have styling for the actual container-page component*/

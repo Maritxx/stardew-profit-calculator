@@ -1,7 +1,9 @@
+import "./OptionsComponent.css";
+
 function OptionsComponent(props) {
     return (
-        <form>
-            <div>
+        <form className="options__container">
+            <div className="basic-info__container">
                 <label>Current Season: 
                     <select
                         name="currentSeason"
@@ -11,9 +13,7 @@ function OptionsComponent(props) {
                         <option value="spring">Spring</option>
                         <option value="summer">Summer</option>
                         <option value="fall">Fall</option>
-                        <option value="winter">Winter</option>
                         <option value="greenhouse">Greenhouse</option>
-                        <option value="gingerisland">Ginger Island</option>
                     </select>
                 </label>
                 <label>Current Day:
@@ -52,7 +52,7 @@ function OptionsComponent(props) {
                 </label>
             </div>
 
-            <div>
+            <div className="seed-info__container">
                 <label>Max. seed Budget:
                     <input
                         type="number"

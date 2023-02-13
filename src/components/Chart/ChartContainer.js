@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+
+import DisplayContainer from "./DisplayContainer";
 import OptionsComponent from "./OptionsComponent";
 
 function ChartContainer() {
@@ -30,7 +32,10 @@ function ChartContainer() {
     };
     
     return (
-        <OptionsComponent data={chartOptions} handleChange={handleChange} />
+        <main>
+            <DisplayContainer data={chartOptions} />
+            <OptionsComponent data={chartOptions} handleChange={handleChange} />
+        </main> 
     )
 }
 

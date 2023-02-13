@@ -1,7 +1,7 @@
 const cropData = [
     {
         name: "Amaranth",
-        season: ["fall"],
+        season: ["fall", "greenhouse"],
         imgUrl: "amaranth.png",
         vendors: {
             pierre: 70,
@@ -24,7 +24,7 @@ const cropData = [
     },
     {
         name: "Ancient Fruit",
-        season: ["spring", "summer", "fall"],
+        season: ["spring", "summer", "fall", "greenhouse"],
         imgUrl: "ancientfruit.png",
         vendors: {
             pierre: 0,
@@ -48,7 +48,7 @@ const cropData = [
     }, 
     {
         name: "Artichoke",
-        season: ["fall"],
+        season: ["fall", "greenhouse"],
         imgUrl: "artichoke.png",
         vendors: {
             pierre: 30,
@@ -72,7 +72,7 @@ const cropData = [
     },
     {
         name: "Beet",
-        season: ["fall"],
+        season: ["fall", "greenhouse"],
         imgUrl: "beet.png",
         vendors: {
             pierre: 0,
@@ -95,7 +95,7 @@ const cropData = [
     },
     {
         name: "Blue Jazz",
-        season: ["spring"],
+        season: ["spring", "greenhouse"],
         imgUrl: "bluejazz.png",
         vendors: {
             pierre: 30,
@@ -118,7 +118,7 @@ const cropData = [
     },
     {
         name: "Blueberry",
-        season: ["summer"],
+        season: ["summer", "greenhouse"],
         imgUrl: "blueberry.png",
         vendors: {
             pierre: 80,
@@ -141,7 +141,7 @@ const cropData = [
     },
     {
         name: "Bok Choy",
-        season: ["fall"],
+        season: ["fall", "greenhouse"],
         imgUrl: "bokchoy.png",
         vendors: {
             pierre: 50,
@@ -164,8 +164,7 @@ const cropData = [
     },
     {
         name: "Cactus Fruit",
-        //only grows in greenhouse/garden pot or ginger island
-        season: [],
+        season: ["greenhouse"],
         imgUrl: "cactusfruit.png",
         vendors: {
             pierre: 0,
@@ -188,7 +187,7 @@ const cropData = [
     },
     {
         name: "Cauliflower",
-        season: ["spring"],
+        season: ["spring", "greenhouse"],
         imgUrl: "cauliflower.png",
         vendors: {
             pierre: 80,
@@ -211,7 +210,7 @@ const cropData = [
     },
     {
         name: "Coffee Bean",
-        season: ["spring", "summer"],
+        season: ["spring", "summer", "greenhouse"],
         imgUrl: "coffeebean.png",
         vendors: {
             pierre: 0,
@@ -235,8 +234,7 @@ const cropData = [
     },
     {
         name: "Corn",
-        //two seasons
-        season: ["summer", "fall"],
+        season: ["summer", "fall", "greenhouse"],
         imgUrl: "corn.png",
         vendors: {
             pierre: 150,
@@ -259,7 +257,7 @@ const cropData = [
     },
     {
         name: "Cranberry",
-        season: ["fall"],
+        season: ["fall", "greenhouse"],
         imgUrl: "cranberry.png",
         vendors: {
             pierre: 240,
@@ -282,7 +280,7 @@ const cropData = [
     },
     {
         name: "Eggplant",
-        season: ["fall"],
+        season: ["fall", "greenhouse"],
         imgUrl: "eggplant.png",
         vendors: {
             pierre: 20,
@@ -305,7 +303,7 @@ const cropData = [
     },
     {
         name: "Fairy Rose",
-        season: ["fall"],
+        season: ["fall", "greenhouse"],
         imgUrl: "fairyrose.png",
         vendors: {
             pierre: 200,
@@ -328,7 +326,7 @@ const cropData = [
     },
     {
         name: "Garlic",
-        season: ["spring"],
+        season: ["spring", "greenhouse"],
         imgUrl: "garlic.png",
         vendors: {
             pierre: 40,
@@ -352,7 +350,7 @@ const cropData = [
     },
     {
         name: "Grape",
-        season: ["fall"],
+        season: ["fall", "greenhouse"],
         imgUrl: "grape.png",
         vendors: {
             pierre: 60,
@@ -375,7 +373,7 @@ const cropData = [
     },
     {
         name: "Green Bean",
-        season: ["spring"],
+        season: ["spring", "greenhouse"],
         imgUrl: "greenbean.png",
         vendors: {
             pierre: 60,
@@ -398,7 +396,7 @@ const cropData = [
     },
     {
         name: "Hops",
-        season: ["summer"],
+        season: ["summer", "greenhouse"],
         imgUrl: "hops.png",
         vendors: {
             pierre: 60,
@@ -421,7 +419,7 @@ const cropData = [
     },     
     {
         name: "Hot Pepper",
-        season: ["summer"],
+        season: ["summer", "greenhouse"],
         imgUrl: "hotpepper.png",
         vendors: {
             pierre: 40,
@@ -444,7 +442,7 @@ const cropData = [
     },  
     {
         name: "Kale",
-        season: ["spring"],
+        season: ["spring", "greenhouse"],
         imgUrl: "kale.png",
         vendors: {
             pierre: 70,
@@ -467,7 +465,7 @@ const cropData = [
     },
     {
         name: "Melon",
-        season: ["summer"],
+        season: ["summer", "greenhouse"],
         imgUrl: "melon.png",
         vendors: {
             pierre: 80,
@@ -490,7 +488,7 @@ const cropData = [
     },
     {
         name: "Parsnip",
-        season: ["spring"],
+        season: ["spring", "greenhouse"],
         imgUrl: "parsnip.png",
         vendors: {
             pierre: 20,
@@ -513,7 +511,7 @@ const cropData = [
     },
     {
         name: "Pineapple",
-        season: ["summer"],
+        season: ["summer", "greenhouse"],
         imgUrl: "pineapple.png",
         vendors: {
             pierre: 0,
@@ -537,7 +535,7 @@ const cropData = [
     },
     {
         name: "Poppy",
-        season: ["summer"],
+        season: ["summer", "greenhouse"],
         imgUrl: "poppy.png",
         vendors: {
             pierre: 100,
@@ -560,7 +558,7 @@ const cropData = [
     },
     {
         name: "Potato",
-        season: ["spring"],
+        season: ["spring", "greenhouse"],
         imgUrl: "potato.png",
         vendors: {
             pierre: 50,
@@ -583,7 +581,7 @@ const cropData = [
     },
     {
         name: "Pumpkin",
-        season: ["fall"],
+        season: ["fall", "greenhouse"],
         imgUrl: "pumpkin.png",
         vendors: {
             pierre: 100,
@@ -606,7 +604,7 @@ const cropData = [
     },
     {
         name: "Radish",
-        season: ["summer"],
+        season: ["summer", "greenhouse"],
         imgUrl: "radish.png",
         vendors: {
             pierre: 40,
@@ -629,7 +627,7 @@ const cropData = [
     },
     {
         name: "Red Cabbage",
-        season: ["summer"],
+        season: ["summer", "greenhouse"],
         imgUrl: "redcabbage.png",
         vendors: {
             pierre: 100,
@@ -649,11 +647,10 @@ const cropData = [
             minYield: 1,
             extraYieldPerc: 0
         }
-        //year 2+
     },
     {
         name: "Rhubarb",
-        season: ["spring"],
+        season: ["spring", "greenhouse"],
         imgUrl: "rhubarb.png",
         vendors: {
             pierre: 0,
@@ -676,7 +673,7 @@ const cropData = [
     },
     {
         name: "Starfruit",
-        season: ["summer"],
+        season: ["summer", "greenhouse"],
         imgUrl: "starfruit.png",
         vendors: {
             pierre: 0,
@@ -699,7 +696,7 @@ const cropData = [
     },
     {
         name: "Strawberry",
-        season: ["spring"],
+        season: ["spring", "greenhouse"],
         imgUrl: "strawberry.png",
         vendors: {
             pierre: 100,
@@ -709,7 +706,7 @@ const cropData = [
                 minPrice: 360,
                 maxPrice: 1000
             }
-            //only during egg festival!!
+            //only during egg festival!! Change to other later.
         },
         growth: {
             daysTillMature: 8,
@@ -723,7 +720,7 @@ const cropData = [
     },
     {
         name: "Summer Spangle",
-        season: ["summer"],
+        season: ["summer", "greenhouse"],
         imgUrl: "summerspangle.png",
         vendors: {
             pierre: 50,
@@ -746,7 +743,7 @@ const cropData = [
     },
     {
         name: "Sunflower",
-        season: ["summer", "fall"],
+        season: ["summer", "fall", "greenhouse"],
         imgUrl: "sunflower.png",
         vendors: {
             pierre: 200,
@@ -770,7 +767,7 @@ const cropData = [
     },
     {
         name: "Sweet Gem Berry",
-        season: ["fall"],
+        season: ["fall", "greenhouse"],
         imgUrl: "sweetgemberry.png",
         vendors: {
             pierre: 0,
@@ -793,7 +790,7 @@ const cropData = [
     },
     {
         name: "Taro Root",
-        season: ["summer"],
+        season: ["summer", "greenhouse"],
         imgUrl: "taroroot.png",
         vendors: {
             pierre: 0,
@@ -819,7 +816,7 @@ const cropData = [
     {
         name: "Tea Leaves",
         //all seasons but only gives leaves on every last week.
-        season: ["spring", "summer", "fall", "winter"],
+        season: ["spring", "summer", "fall", "greenhouse"],
         imgUrl: "tealeaves.png",
         vendors: {
             pierre: 0,
@@ -843,7 +840,7 @@ const cropData = [
     },
     {
         name: "Tomato",
-        season: ["summer"],
+        season: ["summer", "greenhouse"],
         imgUrl: "tomato.png",
         vendors: {
             pierre: 50,
@@ -866,7 +863,7 @@ const cropData = [
     },
     {
         name: "Tulip",
-        season: ["spring"],
+        season: ["spring", "greenhouse"],
         imgUrl: "tulip.png",
         vendors: {
             pierre: 20,
@@ -889,7 +886,7 @@ const cropData = [
     },
     {
         name: "Unmilled Rice",
-        season: ["spring"],
+        season: ["spring", "greenhouse"],
         imgUrl: "unmilledrice.png",
         vendors: {
             pierre: 40,
@@ -914,7 +911,7 @@ const cropData = [
     },
     {
         name: "Wheat",
-        season: ["summer", "fall"],
+        season: ["summer", "fall", "greenhouse"],
         imgUrl: "wheat.png",
         vendors: {
             pierre: 10,
@@ -938,7 +935,7 @@ const cropData = [
     },
     {
         name: "Yam",
-        season: ["fall"],
+        season: ["fall", "greenhouse"],
         imgUrl: "yam.png",
         vendors: {
             pierre: 60,
@@ -964,3 +961,5 @@ const cropData = [
 //Calculations for crop quality are base-price times 1.25, 1.5 and 2 (rounded down).
 
 //Add trellis, giant crop, health/energy, flower variants.
+
+export default cropData;
