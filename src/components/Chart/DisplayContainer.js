@@ -51,11 +51,12 @@ function DisplayContainer(props) {
             //Add Calculations just per season.
             let currentDay = props.data.currentDay + crop.growth.daysTillMature;
             let harvestAmount = 0;
+            let cheapestMerchant;
+            let cheapestSeed = 0;
 
             if (crop.name === "Tea Leaves") {
                 const harvestFirstSeason = currentDay <= 21 ? 7 : currentDay <= 28 ? 28 - currentDay : 0; 
                 harvestAmount = (seasonsLeft - 1) * 7 + harvestFirstSeason;
-                console.log(harvestAmount)
             }
 
             //Calculates harvests for crops that regrow.
@@ -72,17 +73,44 @@ function DisplayContainer(props) {
             const yieldPerCrop = (harvestAmount * (crop.produce.extraYieldPerc + 1)) * crop.produce.minYield;
             const yieldAllCrops = yieldPerCrop * props.data.cropAmount;
             const totalSeeds = crop.growth.daysTillRegrow > 0 ? props.data.cropAmount : props.data.cropAmount * harvestAmount; 
-            //const totalSeedsCost = totalSeeds * price of cheapest merchant....
-            //check which vendors are selected...
-            //compare prices of those vendors.
-            //Select cheapest one.
 
-            const profitAllCrops = yieldAllCrops * crop.produce.baseSellPrice;
-            // ^subtract seed cost.
+            if (props.data.seedsPierre === true) {
+                if (cheapestSeed === 0 || cheapestSeed > crop.vendors.pierre && crop.vendors.pierre != 0) {
+                    cheapestSeed = crop.vendors.pierre;
+                    cheapestMerchant = "Pierre";
+                }
+            }
+
+            if (props.data.seedsJoja === true) {
+                if (cheapestSeed === 0 || cheapestSeed > crop.vendors.joja && crop.vendors.joja != 0) {
+                    cheapestSeed = crop.vendors.joja;
+                    cheapestMerchant = "Joja";
+                }
+            }
+
+            if (props.data.seedsOasis === true) {
+                if (cheapestSeed === 0 || cheapestSeed > crop.vendors.oasis && crop.vendors.oasis != 0) {
+                    cheapestSeed = crop.vendors.oasis;
+                    cheapestMerchant = "Oasis";
+                }           
+            }
+
+            if (props.data.seedsMerchant === true) {
+                if (cheapestSeed === 0 || cheapestSeed > crop.vendors.travelingCart.minprice && crop.vendors.travelingCart.minprice != 0) {
+                    cheapestSeed = crop.vendors.travelingCart.minprice;
+                    cheapestMerchant = "Traveling Merchant";
+                }           
+            }
+
+            const totalSeedsCost = totalSeeds * cheapestSeed;
+            const profitAllCrops = yieldAllCrops * crop.produce.baseSellPrice - totalSeedsCost;
+            const profitPerDay = profitAllCrops / maxDaysForCrop;
 
             crop.numberOfHarvest = harvestAmount;
-            //crop.costOfSeed = totalSeeds
+            crop.seedsToBuy = totalSeeds;
+            crop.costOfSeed = totalSeedsCost;
             crop.profit = Math.round(profitAllCrops);
+            crop.profitPerDay = Math.round(profitPerDay);
 
             return crop;
         });
@@ -106,6 +134,3 @@ function DisplayContainer(props) {
 }
 
 export default DisplayContainer;
- 
-//Check the CHEAPEST price of seeds for that crop and subtract from previous number.
-//Sort array based on that.
