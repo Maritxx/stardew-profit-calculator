@@ -42,7 +42,14 @@ function DisplayComponent(props) {
         },
         theme: {
             mode: "dark",
-        }
+        }, 
+        colors: [function({ value, seriesIndex, w}) {
+            if(value < 0) {
+                return "#d61818"
+            } else {
+                return "#18d61b"
+            }
+        }]
     }
 
     return (
