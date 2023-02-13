@@ -9,12 +9,12 @@ function DisplayContainer(props) {
 
         const filteredCropVendor = filteredCropSeason.filter((crop) => {
             for (const [vendor, value] of Object.entries(crop.vendors)) {
-                if ( value > 0 || value.minPrice > 0) {
+                if ( value > 0 || value.minPrice > 0 || value.otherSources != null) {
                     if ((vendor === "pierre" && props.data.seedsPierre === true) || 
                         (vendor === "joja" && props.data.seedsJoja === true) ||
                         (vendor === "oasis" && props.data.seedsOasis === true) ||
                         (vendor === "travelingCart" && props.data.seedsMerchant === true) ||
-                        (vendor === "other" && props.data.seedsOther === true)) {
+                        (crop.vendors.otherSources.length >= 1 && props.data.seedsOther === true)) {
                             return crop
                     }
                 } 
@@ -100,6 +100,14 @@ function DisplayContainer(props) {
                     cheapestSeed = crop.vendors.travelingCart.minPrice;
                     cheapestMerchant = "Traveling Merchant";
                 }           
+            }
+
+            if (props.data.seedsOther === true) {
+                if (crop.vendors.otherSources.length >= 1) {
+                    cheapestSeed = crop.name === "Strawberry" ? 100 : 0;
+                    cheapestMerchant = "Other Sources";
+                    //Should list in tooltip how to obtain.
+                }
             }
 
             const totalSeedsCost = totalSeeds * cheapestSeed;

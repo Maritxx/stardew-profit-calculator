@@ -10,7 +10,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 105,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 7,
@@ -33,8 +34,12 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
-            //also drops from mobs/artifact
+            },
+            otherSources: [
+                {type: "Monster Drop", chance: "0.5%"},
+                {type: "Fishing Treasure", chance: "0.7%"},
+                {type: "Artifact Trove", chance: "3.7%"}
+            ]
         },
         growth: {
             daysTillMature: 28,
@@ -57,7 +62,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
+            }, 
+            otherSources: []
         },
         growth: {
             daysTillMature: 8,
@@ -68,7 +74,6 @@ const cropData = [
             minYield: 1,
             extraYieldPerc: 0
         }
-        //only year 2+ 
     },
     {
         name: "Beet",
@@ -81,7 +86,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 6,
@@ -104,7 +110,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 7,
@@ -127,7 +134,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 120,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 13,
@@ -150,7 +158,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
+            }, 
+            otherSources: []
         },
         growth: {
             daysTillMature: 4,
@@ -173,7 +182,10 @@ const cropData = [
             travelingCart: {
                 minPrice: 0,
                 maxPrice: 0
-            }
+            }, 
+            otherSources: [
+                {type: "Fish Pond", chance: "5%"}
+            ]
         },
         growth: {
             daysTillMature: 12,
@@ -196,7 +208,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 120,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 12,
@@ -219,8 +232,10 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 2500
-            }
-            //also drops from mobs
+            }, 
+            otherSources: [
+                {type: "Monster Drop", chance: "1%"}
+            ]
         },
         growth: {
             daysTillMature: 10,
@@ -243,7 +258,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 225,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 14,
@@ -266,7 +282,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 360,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 7,
@@ -289,7 +306,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 5,
@@ -312,7 +330,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 300,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 12,
@@ -335,7 +354,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 4,
@@ -359,7 +379,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 10,
@@ -382,7 +403,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 10,
@@ -405,7 +427,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 11,
@@ -428,7 +451,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 5,
@@ -451,7 +475,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 105,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 6,
@@ -474,7 +499,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 120,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 12,
@@ -497,7 +523,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 4,
@@ -520,8 +547,12 @@ const cropData = [
             travelingCart: {
                 minPrice: 0,
                 maxPrice: 0
-            }
-            //Only at island trader for magma cap or drops from mobs
+            },
+            otherSources: [
+                {type: "Island Trader", chance: "Magma Cap (1)"},
+                {type: "Monster Drop", chance: "1.6%"},
+                {type: "Golden Coconut", chance: "14.7%"}
+            ]
         },
         growth: {
             daysTillMature: 14,
@@ -544,7 +575,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 150,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 7,
@@ -567,7 +599,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 6,
@@ -590,7 +623,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 150,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 13,
@@ -613,7 +647,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 6,
@@ -636,7 +671,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 150,
                 maxPrice: 1000
-            }
+            }, 
+            otherSources: []
         },
         growth: {
             daysTillMature: 9,
@@ -659,7 +695,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 150,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 13,
@@ -682,7 +719,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 600,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 13,
@@ -699,14 +737,16 @@ const cropData = [
         season: ["spring", "greenhouse"],
         imgUrl: "strawberry.png",
         vendors: {
-            pierre: 100,
+            pierre: 0,
             joja: 0,
             oasis: 0,
             travelingCart: {
                 minPrice: 360,
                 maxPrice: 1000
-            }
-            //only during egg festival!! Change to other later.
+            },
+            otherSources: [
+                {type: "Egg Festival", price: 100}
+            ]
         },
         growth: {
             daysTillMature: 8,
@@ -729,7 +769,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 8,
@@ -752,7 +793,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
             //drops between 0 and 2 sunflower seeds on harvest.
         },
         growth: {
@@ -776,7 +818,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 600,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 24,
@@ -799,8 +842,13 @@ const cropData = [
             travelingCart: {
                 minPrice: 0,
                 maxPrice: 0
-            }
-            //only at island merchant for 2 bone fragment or from artifacts on ginger island
+            },
+            otherSources: [
+                {type: "Island Merchant", chance: "Bone Fragment (2)"},
+                {type: "Volcano Dungeon Chests", chance: "14,7%"},
+                {type: "Monster Drops", chance: "50%"},
+                {type: "Golden Coconut", chance: "14.7%"}
+            ]
         },
         growth: {
             daysTillMature: 7,
@@ -815,7 +863,6 @@ const cropData = [
     },
     {
         name: "Tea Leaves",
-        //all seasons but only gives leaves on every last week.
         season: ["spring", "summer", "fall", "greenhouse"],
         imgUrl: "tealeaves.png",
         vendors: {
@@ -825,8 +872,10 @@ const cropData = [
             travelingCart: {
                 minPrice: 1500,
                 maxPrice: 2500
-            }
-            //can also get for free from caroline
+            },
+            otherSources: [
+                {type: "Crafting Recipe", chance: "Caroline 2-heart Event"}
+            ]
         },
         growth: {
             daysTillMature: 20,
@@ -849,7 +898,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 11,
@@ -872,7 +922,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 6,
@@ -895,8 +946,11 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
-            //also drops from mobs.
+            },
+            otherSources: [
+                {type: "Monster Drops", chance: "10%"}, 
+                {type: "Artifact Spots", chance: "3%"}
+            ]
         },
         growth: {
             daysTillMature: 6,
@@ -920,7 +974,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 4,
@@ -944,7 +999,8 @@ const cropData = [
             travelingCart: {
                 minPrice: 100,
                 maxPrice: 1000
-            }
+            },
+            otherSources: []
         },
         growth: {
             daysTillMature: 10,
