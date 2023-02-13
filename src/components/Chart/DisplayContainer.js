@@ -96,8 +96,8 @@ function DisplayContainer(props) {
             }
 
             if (props.data.seedsMerchant === true) {
-                if (cheapestSeed === 0 || cheapestSeed > crop.vendors.travelingCart.minprice && crop.vendors.travelingCart.minprice != 0) {
-                    cheapestSeed = crop.vendors.travelingCart.minprice;
+                if (cheapestSeed === 0 || cheapestSeed > crop.vendors.travelingCart.minPrice && crop.vendors.travelingCart.minPrice != 0) {
+                    cheapestSeed = crop.vendors.travelingCart.minPrice;
                     cheapestMerchant = "Traveling Merchant";
                 }           
             }

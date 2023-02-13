@@ -47,7 +47,7 @@ function DisplayComponent(props) {
 
     return (
         <div className="chart__container">
-            <Chart options={options} series={series} height="100%" width="100%" type="bar" />
+            <Chart options={options} series={series} height="100%" width="100%" type="bar" style={{borderRadius:"10px", overflow:"hidden"}} />
         </div>
     )
 }
