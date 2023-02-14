@@ -745,7 +745,7 @@ const cropData = [
                 maxPrice: 1000
             },
             otherSources: [
-                {type: "Egg Festival", price: 100}
+                {type: "Egg Festival", chance: "100 gold"}
             ]
         },
         growth: {

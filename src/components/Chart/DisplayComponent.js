@@ -11,6 +11,21 @@ function DisplayComponent(props) {
         return crop.name
     })
 
+    const daysTillRegrowArray = props.data.map((crop) => {
+        return crop.growth.daysTillRegrow != 0 ? crop.growth.daysTillRegrow : "N/A";
+    })
+
+    const otherSourcesArray = props.data.map((crop) => {
+        if (crop.vendors.otherSources.length >= 1) {
+            const listItems = crop.vendors.otherSources.map((source) => {
+                return `<li> ${source.type} (${source.chance}) </li>`
+            }).join('');
+            return `<span class="tooltip__title"> Other ways to obtain </span> <ul> ${listItems} </ul>`
+        } else {
+            return "";
+        }
+    })
+
     const series = [{
         data: profitArray,
         name: "Total Profit"
@@ -37,8 +52,27 @@ function DisplayComponent(props) {
             }
         },
         tooltip: {
-            enabled: true
-            //Add custom tooltip here with img.
+            enabled: true,
+             custom: function({ series, seriesIndex, dataPointIndex, w}) {
+                 return (`
+                    <div class="tooltip__box">
+                         <img src=${require("../../img/" + props.data[dataPointIndex].imgUrl)} class="tooltip-crop__img" />
+                         <span class="tooltip__title"> Profit Breakdown </span>
+                         <span> Total Income: ${props.data[dataPointIndex].totalIncome} <img src=${require("../../img/gold.png")} class="tooltip-gold__img" /></span>
+                         <span> Cost of Seeds: ${props.data[dataPointIndex].costOfSeed} <img src=${require("../../img/gold.png")} class="tooltip-gold__img" /></span>
+                         <span> Total Profit: ${props.data[dataPointIndex].profit} <img src=${require("../../img/gold.png")} class="tooltip-gold__img" /></span>
+                         <span> Profit per Day: ${props.data[dataPointIndex].profitPerDay} <img src=${require("../../img/gold.png")} class="tooltip-gold__img" /></span>
+                         <span class="tooltip__title"> Crop Information </span>
+                         <span> Days till grown: ${props.data[dataPointIndex].growth.daysTillMature} </span>
+                         <span> Days till regrown: ${daysTillRegrowArray[dataPointIndex]} </span>
+                         <span> Total Harvests: ${props.data[dataPointIndex].numberOfHarvest} </span>
+                         <span class="tooltip__title"> Planting Information </span>
+                         <span> Number of seeds to buy: ${props.data[dataPointIndex].seedsToBuy}</span>
+                         <span> Cheapest Vendor: ${props.data[dataPointIndex].cheapestMerchant} (${props.data[dataPointIndex].cheapestSeed}<img src=${require("../../img/gold.png")} class="tooltip-gold__img" />)  </span>
+                         ${otherSourcesArray[dataPointIndex]}
+                    </div>
+                 `)
+             }
         },
         theme: {
             mode: "dark",
@@ -51,7 +85,6 @@ function DisplayComponent(props) {
             }
         }]
     }
-
     return (
         <div className="chart__container">
             <Chart options={options} series={series} height="100%" width="100%" type="bar" style={{borderRadius:"10px", overflow:"hidden"}} />

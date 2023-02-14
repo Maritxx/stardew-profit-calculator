@@ -106,19 +106,22 @@ function DisplayContainer(props) {
                 if (crop.vendors.otherSources.length >= 1) {
                     cheapestSeed = crop.name === "Strawberry" ? 100 : 0;
                     cheapestMerchant = "Other Sources";
-                    //Should list in tooltip how to obtain.
                 }
             }
 
+            const totalIncome = yieldAllCrops * crop.produce.baseSellPrice;
             const totalSeedsCost = totalSeeds * cheapestSeed;
-            const profitAllCrops = yieldAllCrops * crop.produce.baseSellPrice - totalSeedsCost;
+            const profitAllCrops = totalIncome - totalSeedsCost;
             const profitPerDay = profitAllCrops / maxDaysForCrop;
 
             crop.numberOfHarvest = harvestAmount;
+            crop.totalIncome = Math.round(totalIncome);
             crop.seedsToBuy = totalSeeds;
             crop.costOfSeed = totalSeedsCost;
             crop.profit = Math.round(profitAllCrops);
             crop.profitPerDay = Math.round(profitPerDay);
+            crop.cheapestMerchant = cheapestMerchant;
+            crop.cheapestSeed = cheapestSeed;
 
             return crop;
         });
