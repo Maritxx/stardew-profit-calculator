@@ -2,6 +2,26 @@ import DisplayComponent from "./DisplayComponent";
 import cropData from "../../data/cropData";
 
 function DisplayContainer(props) {
+    let speedGroPerc;
+
+    switch (props.data.fertilizerType) {
+        case "none": 
+            speedGroPerc = 0;
+            break;
+        case "speedGro":
+            speedGroPerc = 0.1;
+            break;
+        case "deluxeSpeedGro":
+            speedGroPerc = 0.25;
+            break;
+        case "hyperSpeedGro":
+            speedGroPerc = 0.33;
+            break;
+        default:
+            speedGroPerc = 0;
+            break;
+    }
+
     function filterCropData() {
         const filteredCropSeason = cropData.filter((crop) => {
             return crop.season.includes(props.data.currentSeason)
@@ -31,9 +51,9 @@ function DisplayContainer(props) {
                 const numberOfSeasons = crop.season.length -1;
                 const seasonsLeft = numberOfSeasons - crop.season.indexOf(props.data.currentSeason);
                 const daysLeftForCrop = seasonsLeft * 28 - props.data.currentDay;
-                return crop.growth.daysTillMature <= daysLeftForCrop;
+                return crop.growth.daysTillMature - Math.floor((crop.growth.daysTillMature * speedGroPerc)) <= daysLeftForCrop;
             } else {
-                return crop.growth.daysTillMature <= (28 - props.data.currentDay) 
+                return crop.growth.daysTillMature - Math.floor((crop.growth.daysTillMature * speedGroPerc)) <= (28 - props.data.currentDay) 
             }
         });
 
@@ -49,7 +69,7 @@ function DisplayContainer(props) {
             const maxDaysForCrop = seasonsLeft * 28;
             //Allow people to set their days for greenhouse.
             //Add Calculations just per season.
-            let currentDay = props.data.currentDay + crop.growth.daysTillMature;
+            let currentDay = props.data.currentDay + crop.growth.daysTillMature - Math.floor((crop.growth.daysTillMature * speedGroPerc));
             let harvestAmount = 0;
             let cheapestMerchant;
             let cheapestSeed = 0;
@@ -65,7 +85,7 @@ function DisplayContainer(props) {
                     harvestAmount++
                 }
             } else {
-                for (; currentDay <= maxDaysForCrop; currentDay += crop.growth.daysTillMature) {
+                for (; currentDay <= maxDaysForCrop; currentDay += crop.growth.daysTillMature - Math.floor((crop.growth.daysTillMature * speedGroPerc))) {
                     harvestAmount++
                 }
             }
@@ -114,6 +134,7 @@ function DisplayContainer(props) {
             const profitAllCrops = totalIncome - totalSeedsCost;
             const profitPerDay = profitAllCrops / maxDaysForCrop;
 
+            crop.growth.daysTillMatureFertilizer = crop.growth.daysTillMature - Math.floor((crop.growth.daysTillMature * speedGroPerc));
             crop.numberOfHarvest = harvestAmount;
             crop.totalIncome = Math.round(totalIncome);
             crop.seedsToBuy = totalSeeds;
@@ -125,7 +146,6 @@ function DisplayContainer(props) {
 
             return crop;
         });
-
         return filteredArray
     }
 

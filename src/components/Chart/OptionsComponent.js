@@ -108,7 +108,6 @@ function OptionsComponent(props) {
                             name="seedsOther"
                             checked={props.data.seedsOther}
                             onChange={props.handleChange}
-                            //Will need some sort of tooltip to make clear its mobs, crafting and island merchant.
                         > 
                         </input> Other Sources                  
                     </label>
@@ -120,9 +119,9 @@ function OptionsComponent(props) {
                         onChange={props.handleChange}
                     >
                         <option value="none">None</option>
-                        <option value="basicFertilizer">Basic Fertilizer</option>
+                        {/* <option value="basicFertilizer">Basic Fertilizer</option>
                         <option value="qualityFertilizer">Quality Fertilizer</option>
-                        <option value="deluxeFertilizer">Deluxe Fertilizer</option>
+                        <option value="deluxeFertilizer">Deluxe Fertilizer</option> */}
                         <option value="speedGro">Speed-Gro</option>
                         <option value="deluxeSpeedGro">Deluxe Speed-Gro</option>
                         <option value="hyperSpeedGro">Hyper Speed-Gro</option>

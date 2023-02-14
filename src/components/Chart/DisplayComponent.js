@@ -63,7 +63,7 @@ function DisplayComponent(props) {
                          <span> Total Profit: ${props.data[dataPointIndex].profit} <img src=${require("../../img/gold.png")} class="tooltip-gold__img" /></span>
                          <span> Profit per Day: ${props.data[dataPointIndex].profitPerDay} <img src=${require("../../img/gold.png")} class="tooltip-gold__img" /></span>
                          <span class="tooltip__title"> Crop Information </span>
-                         <span> Days till grown: ${props.data[dataPointIndex].growth.daysTillMature} </span>
+                         <span> Days till grown: ${props.data[dataPointIndex].growth.daysTillMatureFertilizer} </span>
                          <span> Days till regrown: ${daysTillRegrowArray[dataPointIndex]} </span>
                          <span> Total Harvests: ${props.data[dataPointIndex].numberOfHarvest} </span>
                          <span class="tooltip__title"> Planting Information </span>
