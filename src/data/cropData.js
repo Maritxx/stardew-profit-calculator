@@ -1,6 +1,7 @@
 const cropData = [
     {
         name: "Amaranth",
+        cropType: "vegetable",
         season: ["fall", "greenhouse"],
         imgUrl: "amaranth.png",
         vendors: {
@@ -25,6 +26,7 @@ const cropData = [
     },
     {
         name: "Ancient Fruit",
+        cropType: "fruit",
         season: ["spring", "summer", "fall", "greenhouse"],
         imgUrl: "ancientfruit.png",
         vendors: {
@@ -53,6 +55,7 @@ const cropData = [
     }, 
     {
         name: "Artichoke",
+        cropType: "vegetable",
         season: ["fall", "greenhouse"],
         imgUrl: "artichoke.png",
         vendors: {
@@ -77,6 +80,7 @@ const cropData = [
     },
     {
         name: "Beet",
+        cropType: "vegetable",
         season: ["fall", "greenhouse"],
         imgUrl: "beet.png",
         vendors: {
@@ -101,6 +105,7 @@ const cropData = [
     },
     {
         name: "Blue Jazz",
+        cropType: "flower",
         season: ["spring", "greenhouse"],
         imgUrl: "bluejazz.png",
         vendors: {
@@ -125,6 +130,7 @@ const cropData = [
     },
     {
         name: "Blueberry",
+        cropType: "fruit",
         season: ["summer", "greenhouse"],
         imgUrl: "blueberry.png",
         vendors: {
@@ -149,6 +155,7 @@ const cropData = [
     },
     {
         name: "Bok Choy",
+        cropType: "vegetable",
         season: ["fall", "greenhouse"],
         imgUrl: "bokchoy.png",
         vendors: {
@@ -173,6 +180,7 @@ const cropData = [
     },
     {
         name: "Cactus Fruit",
+        cropType: "fruit",
         season: ["greenhouse"],
         imgUrl: "cactusfruit.png",
         vendors: {
@@ -199,6 +207,7 @@ const cropData = [
     },
     {
         name: "Cauliflower",
+        cropType: "vegetable",
         season: ["spring", "greenhouse"],
         imgUrl: "cauliflower.png",
         vendors: {
@@ -223,6 +232,7 @@ const cropData = [
     },
     {
         name: "Coffee Bean",
+        cropType: "coffeeBean",
         season: ["spring", "summer", "greenhouse"],
         imgUrl: "coffeebean.png",
         vendors: {
@@ -249,6 +259,7 @@ const cropData = [
     },
     {
         name: "Corn",
+        cropType: "vegetable",
         season: ["summer", "fall", "greenhouse"],
         imgUrl: "corn.png",
         vendors: {
@@ -273,6 +284,7 @@ const cropData = [
     },
     {
         name: "Cranberry",
+        cropType: "fruit",
         season: ["fall", "greenhouse"],
         imgUrl: "cranberry.png",
         vendors: {
@@ -297,6 +309,7 @@ const cropData = [
     },
     {
         name: "Eggplant",
+        cropType: "vegetable",
         season: ["fall", "greenhouse"],
         imgUrl: "eggplant.png",
         vendors: {
@@ -321,6 +334,7 @@ const cropData = [
     },
     {
         name: "Fairy Rose",
+        cropType: "flower",
         season: ["fall", "greenhouse"],
         imgUrl: "fairyrose.png",
         vendors: {
@@ -345,6 +359,7 @@ const cropData = [
     },
     {
         name: "Garlic",
+        cropType: "vegetable",
         season: ["spring", "greenhouse"],
         imgUrl: "garlic.png",
         vendors: {
@@ -365,11 +380,11 @@ const cropData = [
             baseSellPrice: 50,
             minYield: 1,
             extraYieldPerc: 0      
-        }
-        //only year 2+    
+        }  
     },
     {
         name: "Grape",
+        cropType: "fruit",
         season: ["fall", "greenhouse"],
         imgUrl: "grape.png",
         vendors: {
@@ -394,6 +409,7 @@ const cropData = [
     },
     {
         name: "Green Bean",
+        cropType: "vegetable",
         season: ["spring", "greenhouse"],
         imgUrl: "greenbean.png",
         vendors: {
@@ -418,6 +434,7 @@ const cropData = [
     },
     {
         name: "Hops",
+        cropType: "vegetable",
         season: ["summer", "greenhouse"],
         imgUrl: "hops.png",
         vendors: {
@@ -442,6 +459,7 @@ const cropData = [
     },     
     {
         name: "Hot Pepper",
+        cropType: "fruit",
         season: ["summer", "greenhouse"],
         imgUrl: "hotpepper.png",
         vendors: {
@@ -466,6 +484,7 @@ const cropData = [
     },  
     {
         name: "Kale",
+        cropType: "vegetable",
         season: ["spring", "greenhouse"],
         imgUrl: "kale.png",
         vendors: {
@@ -490,6 +509,7 @@ const cropData = [
     },
     {
         name: "Melon",
+        cropType: "fruit",
         season: ["summer", "greenhouse"],
         imgUrl: "melon.png",
         vendors: {
@@ -514,6 +534,7 @@ const cropData = [
     },
     {
         name: "Parsnip",
+        cropType: "vegetable",
         season: ["spring", "greenhouse"],
         imgUrl: "parsnip.png",
         vendors: {
@@ -538,6 +559,7 @@ const cropData = [
     },
     {
         name: "Pineapple",
+        cropType: "fruit",
         season: ["summer", "greenhouse"],
         imgUrl: "pineapple.png",
         vendors: {
@@ -566,6 +588,7 @@ const cropData = [
     },
     {
         name: "Poppy",
+        cropType: "flower",
         season: ["summer", "greenhouse"],
         imgUrl: "poppy.png",
         vendors: {
@@ -590,6 +613,7 @@ const cropData = [
     },
     {
         name: "Potato",
+        cropType: "vegetable",
         season: ["spring", "greenhouse"],
         imgUrl: "potato.png",
         vendors: {
@@ -614,6 +638,7 @@ const cropData = [
     },
     {
         name: "Pumpkin",
+        cropType: "vegetable",
         season: ["fall", "greenhouse"],
         imgUrl: "pumpkin.png",
         vendors: {
@@ -638,6 +663,7 @@ const cropData = [
     },
     {
         name: "Radish",
+        cropType: "vegetable",
         season: ["summer", "greenhouse"],
         imgUrl: "radish.png",
         vendors: {
@@ -662,6 +688,7 @@ const cropData = [
     },
     {
         name: "Red Cabbage",
+        cropType: "vegetable",
         season: ["summer", "greenhouse"],
         imgUrl: "redcabbage.png",
         vendors: {
@@ -686,6 +713,7 @@ const cropData = [
     },
     {
         name: "Rhubarb",
+        cropType: "fruit",
         season: ["spring", "greenhouse"],
         imgUrl: "rhubarb.png",
         vendors: {
@@ -710,6 +738,7 @@ const cropData = [
     },
     {
         name: "Starfruit",
+        cropType: "fruit",
         season: ["summer", "greenhouse"],
         imgUrl: "starfruit.png",
         vendors: {
@@ -734,6 +763,7 @@ const cropData = [
     },
     {
         name: "Strawberry",
+        cropType: "fruit",
         season: ["spring", "greenhouse"],
         imgUrl: "strawberry.png",
         vendors: {
@@ -760,6 +790,7 @@ const cropData = [
     },
     {
         name: "Summer Spangle",
+        cropType: "flower",
         season: ["summer", "greenhouse"],
         imgUrl: "summerspangle.png",
         vendors: {
@@ -784,6 +815,7 @@ const cropData = [
     },
     {
         name: "Sunflower",
+        cropType: "flower",
         season: ["summer", "fall", "greenhouse"],
         imgUrl: "sunflower.png",
         vendors: {
@@ -796,6 +828,7 @@ const cropData = [
             },
             otherSources: []
             //drops between 0 and 2 sunflower seeds on harvest.
+            //can be processed into oil...
         },
         growth: {
             daysTillMature: 8,
@@ -809,6 +842,7 @@ const cropData = [
     },
     {
         name: "Sweet Gem Berry",
+        cropType: "fruit",
         season: ["fall", "greenhouse"],
         imgUrl: "sweetgemberry.png",
         vendors: {
@@ -833,6 +867,7 @@ const cropData = [
     },
     {
         name: "Taro Root",
+        cropType: "vegetable",
         season: ["summer", "greenhouse"],
         imgUrl: "taroroot.png",
         vendors: {
@@ -863,6 +898,7 @@ const cropData = [
     },
     {
         name: "Tea Leaves",
+        cropType: "vegetable",
         season: ["spring", "summer", "fall", "greenhouse"],
         imgUrl: "tealeaves.png",
         vendors: {
@@ -889,6 +925,7 @@ const cropData = [
     },
     {
         name: "Tomato",
+        cropType: "vegetable",
         season: ["summer", "greenhouse"],
         imgUrl: "tomato.png",
         vendors: {
@@ -913,6 +950,7 @@ const cropData = [
     },
     {
         name: "Tulip",
+        cropType: "flower",
         season: ["spring", "greenhouse"],
         imgUrl: "tulip.png",
         vendors: {
@@ -937,6 +975,7 @@ const cropData = [
     },
     {
         name: "Unmilled Rice",
+        cropType: "vegetable",
         season: ["spring", "greenhouse"],
         imgUrl: "unmilledrice.png",
         vendors: {
@@ -965,6 +1004,7 @@ const cropData = [
     },
     {
         name: "Wheat",
+        cropType: "vegetable",
         season: ["summer", "fall", "greenhouse"],
         imgUrl: "wheat.png",
         vendors: {
@@ -990,6 +1030,7 @@ const cropData = [
     },
     {
         name: "Yam",
+        cropType: "vegetable",
         season: ["fall", "greenhouse"],
         imgUrl: "yam.png",
         vendors: {

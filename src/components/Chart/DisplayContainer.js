@@ -20,7 +20,7 @@ function DisplayContainer(props) {
         default:
             speedGroPerc = 0;
             break;
-    }
+    } //add extra variable and also add fertilizer here ^ extra fertilizer weill be ratio.
 
     function filterCropData() {
         const filteredCropSeason = cropData.filter((crop) => {
@@ -57,7 +57,17 @@ function DisplayContainer(props) {
             }
         });
 
-        return filteredCropTime;
+        const filteredProduceType = filteredCropTime.filter((crop) => {
+            switch (props.data.produceType) {
+                case "raw": 
+                    return crop;
+                case "keg":
+                    return crop.cropType != "flower";
+                case "jar":
+                    return crop.cropType != "flower" && crop.cropType != "coffeeBean";
+            }
+        })
+        return filteredProduceType;
     }
 
     function calculateCropProfits() {
@@ -129,13 +139,48 @@ function DisplayContainer(props) {
                 }
             }
 
-            const totalIncome = yieldAllCrops * crop.produce.baseSellPrice;
+            //Calculates total profit based on produce type.
+            let totalIncome;
+            let producedProduct;
+            switch (props.data.produceType) {
+                case "raw":
+                    totalIncome = yieldAllCrops * crop.produce.baseSellPrice;
+                    producedProduct = "Crop"
+                    break;
+                case "keg": 
+                    if (crop.name === "Hops") {
+                        totalIncome = yieldAllCrops * 300;
+                        producedProduct = "Pale Ale";
+                    } else if (crop.name === "Wheat") {
+                        totalIncome = yieldAllCrops * 200;
+                        producedProduct = "Beer"
+                    } else if (crop.name === "Tea Leaves") {
+                        totalIncome = yieldAllCrops * 100;
+                        producedProduct = "Green Tea";
+                    } else if (crop.name === "Coffee Bean") {
+                        totalIncome = (yieldAllCrops / 5) * 150;
+                        producedProduct = "Coffee";
+                    } else if (crop.cropType === "fruit") {
+                        totalIncome = yieldAllCrops * (crop.produce.baseSellPrice * 3);
+                        producedProduct = "Wine";
+                    } else if (crop.cropType === "vegetable") {
+                        totalIncome = yieldAllCrops * (crop.produce.baseSellPrice * 2.25);
+                        producedProduct = "Juice";
+                    }
+                    break;
+                case "jar":
+                    totalIncome = yieldAllCrops * (crop.produce.baseSellPrice * 2 + 50);
+                    producedProduct = crop.cropType === "fruit" ? "Jelly" : "Pickles";
+                    break;
+            }
+
             const totalSeedsCost = totalSeeds * cheapestSeed;
             const profitAllCrops = totalIncome - totalSeedsCost;
             const profitPerDay = profitAllCrops / maxDaysForCrop;
 
             crop.growth.daysTillMatureFertilizer = crop.growth.daysTillMature - Math.floor((crop.growth.daysTillMature * speedGroPerc));
             crop.numberOfHarvest = harvestAmount;
+            crop.producedProduct = producedProduct;
             crop.totalIncome = Math.round(totalIncome);
             crop.seedsToBuy = totalSeeds;
             crop.costOfSeed = totalSeedsCost;

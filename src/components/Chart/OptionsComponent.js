@@ -36,7 +36,6 @@ function OptionsComponent(props) {
                         <option value="raw">Raw</option>
                         <option value="jar">Jar</option>
                         <option value="keg">Keg</option>
-                        <option value="mostProfitable">Most Profitable</option>
                     </select>
                 </label>
                 <label>Amount of Crops:
