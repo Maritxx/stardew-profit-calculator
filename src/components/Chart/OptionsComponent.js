@@ -118,13 +118,27 @@ function OptionsComponent(props) {
                         onChange={props.handleChange}
                     >
                         <option value="none">None</option>
-                        {/* <option value="basicFertilizer">Basic Fertilizer</option>
+                        <option value="basicFertilizer">Basic Fertilizer</option>
                         <option value="qualityFertilizer">Quality Fertilizer</option>
-                        <option value="deluxeFertilizer">Deluxe Fertilizer</option> */}
+                        <option value="deluxeFertilizer">Deluxe Fertilizer</option>
                         <option value="speedGro">Speed-Gro</option>
                         <option value="deluxeSpeedGro">Deluxe Speed-Gro</option>
                         <option value="hyperSpeedGro">Hyper Speed-Gro</option>
                     </select>
+                </label>
+            </div>
+
+            <div className="level-info__container">
+                <label>Farming Level:
+                        <input 
+                            type="number"
+                            name="farmingLevel"
+                            min="0"
+                            max="10"
+                            value={props.data.farmingLevel}
+                            onChange={props.handleChange}
+                        >
+                        </input>
                 </label>
             </div>
         </form>

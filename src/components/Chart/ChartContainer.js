@@ -15,7 +15,8 @@ function ChartContainer() {
         seedsOasis: false,
         seedsMerchant: false,
         seedsOther: false,
-        fertilizerType: "none"
+        fertilizerType: "none",
+        farmingLevel: 0
     });
 
     function handleChange(e) {

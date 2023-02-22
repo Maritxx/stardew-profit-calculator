@@ -3,24 +3,42 @@ import cropData from "../../data/cropData";
 
 function DisplayContainer(props) {
     let speedGroPerc;
+    let fertilizerPerc;
 
     switch (props.data.fertilizerType) {
         case "none": 
             speedGroPerc = 0;
+            fertilizerPerc = 0;
+            break;
+        case "basicFertilizer":
+            speedGroPerc = 0;
+            fertilizerPerc = 1;
+            break;
+        case "qualityFertilizer":
+            speedGroPerc = 0;
+            fertilizerPerc = 2;
+            break;
+        case "deluxeFertilizer":
+            speedGroPerc = 0;
+            fertilizerPerc = 3;
             break;
         case "speedGro":
             speedGroPerc = 0.1;
+            fertilizerPerc = 0;
             break;
         case "deluxeSpeedGro":
             speedGroPerc = 0.25;
+            fertilizerPerc = 0;
             break;
         case "hyperSpeedGro":
             speedGroPerc = 0.33;
+            fertilizerPerc = 0;
             break;
         default:
             speedGroPerc = 0;
+            fertilizerPerc = 0;
             break;
-    } //add extra variable and also add fertilizer here ^ extra fertilizer weill be ratio.
+    }
 
     function filterCropData() {
         const filteredCropSeason = cropData.filter((crop) => {
@@ -140,11 +158,21 @@ function DisplayContainer(props) {
             }
 
             //Calculates total profit based on produce type.
-            let totalIncome;
+            let totalIncome = 0;
             let producedProduct;
             switch (props.data.produceType) {
                 case "raw":
-                    totalIncome = yieldAllCrops * crop.produce.baseSellPrice;
+                    const iridiumRatio = fertilizerPerc >= 3 ? (0.2 * (props.data.farmingLevel / 10) + 0.2 * (fertilizerPerc) * ((props.data.farmingLevel + 2) / 12) + 0.01) / 2 : 0;
+                    const goldRatio = (1 - iridiumRatio) * (0.2 * (props.data.farmingLevel / 10) + 0.2 * (fertilizerPerc) * ((props.data.farmingLevel + 2) / 12) + 0.01);
+                    const silverRatio = fertilizerPerc >= 3 ? (Math.max(0, 1 - iridiumRatio - goldRatio)) : Math.max(0, Math.min(0.75, (goldRatio * 2)) * (1 - goldRatio));
+                    const baseRatio = Math.max(0, 1 - iridiumRatio - goldRatio - silverRatio); 
+                    //Does still need to account for fertilizer only working on the first crop harvest from multi-harvest crops.
+                    //Change props.data.farmingLevel to a variable that takes into consideration food buffs.
+                    
+                    totalIncome += yieldAllCrops * iridiumRatio * (crop.produce.baseSellPrice * 2);
+                    totalIncome += yieldAllCrops * goldRatio * (crop.produce.baseSellPrice * 1.5);
+                    totalIncome += yieldAllCrops * silverRatio * (crop.produce.baseSellPrice * 1.25);
+                    totalIncome += yieldAllCrops * baseRatio * crop.produce.baseSellPrice;
                     producedProduct = "Crop"
                     break;
                 case "keg": 

@@ -1055,8 +1055,6 @@ const cropData = [
     },
 ]
 
-//Calculations for crop quality are base-price times 1.25, 1.5 and 2 (rounded down).
-
 //Add trellis, giant crop, health/energy, flower variants.
 
 export default cropData;
