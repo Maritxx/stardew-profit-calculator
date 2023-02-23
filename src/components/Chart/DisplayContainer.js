@@ -2,36 +2,36 @@ import DisplayComponent from "./DisplayComponent";
 import cropData from "../../data/cropData";
 
 function DisplayContainer(props) {
-    let speedGroPerc;
+    let speedGroPerc = props.data.professionTwo === "agriculturist" ? 0.1 : 0;
     let fertilizerPerc;
 
     switch (props.data.fertilizerType) {
         case "none": 
-            speedGroPerc = 0;
+            speedGroPerc += 0;
             fertilizerPerc = 0;
             break;
         case "basicFertilizer":
-            speedGroPerc = 0;
+            speedGroPerc += 0;
             fertilizerPerc = 1;
             break;
         case "qualityFertilizer":
-            speedGroPerc = 0;
+            speedGroPerc += 0;
             fertilizerPerc = 2;
             break;
         case "deluxeFertilizer":
-            speedGroPerc = 0;
+            speedGroPerc += 0;
             fertilizerPerc = 3;
             break;
         case "speedGro":
-            speedGroPerc = 0.1;
+            speedGroPerc += 0.1;
             fertilizerPerc = 0;
             break;
         case "deluxeSpeedGro":
-            speedGroPerc = 0.25;
+            speedGroPerc += 0.25;
             fertilizerPerc = 0;
             break;
         case "hyperSpeedGro":
-            speedGroPerc = 0.33;
+            speedGroPerc += 0.33;
             fertilizerPerc = 0;
             break;
         default:
@@ -173,7 +173,12 @@ function DisplayContainer(props) {
                     totalIncome += yieldAllCrops * goldRatio * (crop.produce.baseSellPrice * 1.5);
                     totalIncome += yieldAllCrops * silverRatio * (crop.produce.baseSellPrice * 1.25);
                     totalIncome += yieldAllCrops * baseRatio * crop.produce.baseSellPrice;
-                    producedProduct = "Crop"
+                    
+                    if (props.data.professionOne === "tiller") {
+                        totalIncome *= 1.1; 
+                    }
+
+                    producedProduct = "Crop";
                     break;
                 case "keg": 
                     if (crop.name === "Hops") {
@@ -195,10 +200,16 @@ function DisplayContainer(props) {
                         totalIncome = yieldAllCrops * (crop.produce.baseSellPrice * 2.25);
                         producedProduct = "Juice";
                     }
+                    if (props.data.professionTwo === "artisan") {
+                        totalIncome *= 1.4;
+                    }
                     break;
                 case "jar":
                     totalIncome = yieldAllCrops * (crop.produce.baseSellPrice * 2 + 50);
                     producedProduct = crop.cropType === "fruit" ? "Jelly" : "Pickles";
+                    if (props.data.professionTwo === "artisan") {
+                        totalIncome *= 1.4;
+                    }
                     break;
             }
 

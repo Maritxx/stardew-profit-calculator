@@ -140,6 +140,42 @@ function OptionsComponent(props) {
                         >
                         </input>
                 </label>
+                <fieldset>
+                    <legend>Farming Professions:</legend>
+                    <label> Level 5:
+                        <select
+                            name="professionOne"
+                            disabled={props.data.farmingLevel < 5}
+                            onChange={props.handleChange}
+                        >
+                            <option value="none">None</option>
+                            <option value="rancher">Rancher</option>
+                            <option value="tiller">Tiller</option>
+                        </select>                 
+                    </label>
+                    <label> Level 10:
+                        <select
+                            name="professionTwo"
+                            disabled={props.data.farmingLevel < 10}
+                            onChange={props.handleChange}
+                        >
+                            {props.data.professionOne === "rancher" ? 
+                                <>
+                                    <option value="none">None</option>
+                                    <option value="coopmaster">Coopmaster</option> 
+                                    <option value="shepherd">Shepherd</option>
+                                </> : 
+                                props.data.professionOne === "tiller" ? 
+                                <>
+                                    <option value="none">None</option>
+                                    <option value="artisan">Artisan</option>
+                                    <option value="agriculturist">Agriculturist</option>
+                                </> :
+                                    <option value="none">None</option>
+                                }
+                        </select>                 
+                    </label>
+                </fieldset>
             </div>
         </form>
     )

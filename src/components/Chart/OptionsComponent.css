@@ -81,3 +81,41 @@
     max-width: 15px;
     margin-right: 15px;
 }
+
+.level-info__container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.level-info__container label {
+    padding: 5px;
+    background-color: #222222;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-weight: 500;
+    max-width: 225px;
+    width: 100%;
+}
+
+.level-info__container select {
+    float: right;
+    max-width: 100px;
+    width: 100%;
+}
+
+.level-info__container fieldset {
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+    font-weight: 500;
+    background-color: #222222;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.level-info__container input {
+    float: right;
+    max-width: 60px;
+    width: 100%;
+}
