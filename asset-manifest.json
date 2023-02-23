@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/stardew-profit-calculator/static/css/main.a0db0f2a.css",
-    "main.js": "/stardew-profit-calculator/static/js/main.fe064572.js",
+    "main.js": "/stardew-profit-calculator/static/js/main.7881d1ea.js",
     "static/media/bg.jpg": "/stardew-profit-calculator/static/media/bg.563efb13ee3d14ed9e7f.jpg",
     "index.html": "/stardew-profit-calculator/index.html",
     "main.a0db0f2a.css.map": "/stardew-profit-calculator/static/css/main.a0db0f2a.css.map",
-    "main.fe064572.js.map": "/stardew-profit-calculator/static/js/main.fe064572.js.map"
+    "main.7881d1ea.js.map": "/stardew-profit-calculator/static/js/main.7881d1ea.js.map"
   },
   "entrypoints": [
     "static/css/main.a0db0f2a.css",
-    "static/js/main.fe064572.js"
+    "static/js/main.7881d1ea.js"
   ]
 }
