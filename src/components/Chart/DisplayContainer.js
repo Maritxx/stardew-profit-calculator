@@ -162,12 +162,13 @@ function DisplayContainer(props) {
             let producedProduct;
             switch (props.data.produceType) {
                 case "raw":
-                    const iridiumRatio = fertilizerPerc >= 3 ? (0.2 * (props.data.farmingLevel / 10) + 0.2 * (fertilizerPerc) * ((props.data.farmingLevel + 2) / 12) + 0.01) / 2 : 0;
-                    const goldRatio = (1 - iridiumRatio) * (0.2 * (props.data.farmingLevel / 10) + 0.2 * (fertilizerPerc) * ((props.data.farmingLevel + 2) / 12) + 0.01);
+                    const totalFarmLevel = calculateFarmLevel();
+                    console.log(totalFarmLevel)
+
+                    const iridiumRatio = fertilizerPerc >= 3 ? (0.2 * (totalFarmLevel / 10) + 0.2 * (fertilizerPerc) * ((totalFarmLevel + 2) / 12) + 0.01) / 2 : 0;
+                    const goldRatio = (1 - iridiumRatio) * (0.2 * (totalFarmLevel / 10) + 0.2 * (fertilizerPerc) * ((totalFarmLevel + 2) / 12) + 0.01);
                     const silverRatio = fertilizerPerc >= 3 ? (Math.max(0, 1 - iridiumRatio - goldRatio)) : Math.max(0, Math.min(0.75, (goldRatio * 2)) * (1 - goldRatio));
                     const baseRatio = Math.max(0, 1 - iridiumRatio - goldRatio - silverRatio); 
-                    //Does still need to account for fertilizer only working on the first crop harvest from multi-harvest crops.
-                    //Change props.data.farmingLevel to a variable that takes into consideration food buffs.
                     
                     totalIncome += yieldAllCrops * iridiumRatio * (crop.produce.baseSellPrice * 2);
                     totalIncome += yieldAllCrops * goldRatio * (crop.produce.baseSellPrice * 1.5);
@@ -231,6 +232,37 @@ function DisplayContainer(props) {
             return crop;
         });
         return filteredArray
+    }
+
+    function calculateFarmLevel() {
+        let foodBuffLevel;
+
+        switch (props.data.foodBuff) {
+            case "none":
+                foodBuffLevel = 0;
+                break;
+            case "completeBreakfast":
+                foodBuffLevel = 2;
+                break;
+            case "hashbrowns":
+                foodBuffLevel = 1;
+                break;
+            case "pepperPoppers":
+                foodBuffLevel = 2;
+                break;
+            case "tomKhaSoup": 
+                foodBuffLevel = 2;
+                break;
+            case "farmersLunch":
+                foodBuffLevel = 3;
+                break;
+            case "mapleBar":
+                foodBuffLevel = 1;
+                break;
+        }
+
+        const seasoningBuffLevel = props.data.seasoningQiAdded ? 1 : 0;
+        return props.data.farmingLevel + foodBuffLevel + seasoningBuffLevel;
     }
 
     function sortCropData() {

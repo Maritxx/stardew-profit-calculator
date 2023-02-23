@@ -145,6 +145,7 @@ function OptionsComponent(props) {
                     <label> Level 5:
                         <select
                             name="professionOne"
+                            value={props.data.professionOne}
                             disabled={props.data.farmingLevel < 5}
                             onChange={props.handleChange}
                         >
@@ -156,6 +157,7 @@ function OptionsComponent(props) {
                     <label> Level 10:
                         <select
                             name="professionTwo"
+                            value={props.data.professionTwo}
                             disabled={props.data.farmingLevel < 10}
                             onChange={props.handleChange}
                         >
@@ -174,6 +176,34 @@ function OptionsComponent(props) {
                                     <option value="none">None</option>
                                 }
                         </select>                 
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>Food Buffs:</legend>
+                    <label>Food type:
+                        <select 
+                            name="foodBuff"
+                            value={props.data.foodBuff}
+                            onChange={props.handleChange}
+                        >
+                            <option value="none">None</option>
+                            <option value="completeBreakfast">Complete Breakfast</option>
+                            <option value="hashbrowns">Hashbrowns</option>
+                            <option value="pepperPoppers">Pepper Poppers</option>
+                            <option value="tomKhaSoup">Tom Kha Soup</option>
+                            <option value="farmersLunch">Farmer's Lunch</option>
+                            <option value="mapleBar">Maple Bar</option>
+                        </select>
+                    </label>
+                    <label>
+                        <input 
+                            type="checkbox"
+                            name="seasoningQiAdded"
+                            checked={props.data.seasoningQiAdded}
+                            disabled={props.data.foodBuff === "none"}
+                            onChange={props.handleChange}
+                        >
+                        </input> Qi Seasoning Added?
                     </label>
                 </fieldset>
             </div>

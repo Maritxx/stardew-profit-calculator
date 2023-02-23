@@ -18,7 +18,9 @@ function ChartContainer() {
         fertilizerType: "none",
         farmingLevel: 0,
         professionOne: "none",
-        professionTwo: "none"
+        professionTwo: "none",
+        foodBuff: "none",
+        seasoningQiAdded: false
     });
 
     function handleChange(e) {
@@ -29,7 +31,8 @@ function ChartContainer() {
         } else if (type === "number") {
             const newValue = Math.max(Number(min), Math.min(Number(max), Number(value)));
             setChartOptions({ ...chartOptions, [name]: newValue });
-        } else {
+        }
+            else {
             setChartOptions({ ...chartOptions, [name]: value });            
         }
     };
